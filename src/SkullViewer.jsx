@@ -1,9 +1,11 @@
 import React from "react";
+import Header from "./Header";
 
 const SkullViewer = () => {
   return (
-    <div
-      className="relative w-full h-[70vh] overflow-hidden flex items-center justify-center"
+    <Header>
+     <div
+      className="relative w-full h-screen overflow-hidden flex items-center justify-center"
       style={{
         cursor: "url('http://www.rw-designer.com/cursor-extern.php?id=38216'), auto",
         backgroundColor: "#0f2027", 
@@ -41,6 +43,9 @@ const SkullViewer = () => {
         ></iframe>
       </div>
     </div>
+
+    </Header>
+   
   );
 };
 

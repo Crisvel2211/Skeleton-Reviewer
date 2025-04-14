@@ -1,24 +1,18 @@
-import React from 'react';
-import SkeletonViewer from './SkeletonViewer';
-import SkullViewer from './SkullViewer';
-import RibcageViewer from './RibcageViewer';
-
-const App = () => {
+import React from 'react'
+import { Routes, Route } from 'react-router-dom'
+import HomePage from './HomePage'
+import SkeletonViewer from './SkeletonViewer'
+import SkullViewer from './SkullViewer'
+import RibcageViewer from './RibcageViewer'
+function App() {
   return (
-    <div className="flex flex-col h-auto bg-gray-50">
-      <header className="p-4 bg-white shadow">
-      <h1 className="text-3xl md:text-4xl font-extrabold text-center tracking-wide bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent drop-shadow-lg animate-pulse">
-  🦴 3D Human Skeleton Viewer
-</h1>
+    <Routes>
+      <Route path="/" element={<HomePage />} />
+      <Route path="/skull" element={<SkullViewer/>} />
+      <Route path="/skeleton" element={<SkeletonViewer />} />
+      <Route path="/ribcage" element={<RibcageViewer />} />
+    </Routes>
+  )
+}
 
-      </header>
-      <main className="flex-1">
-        <SkeletonViewer />  
-        <SkullViewer/>
-        <RibcageViewer />
-      </main>
-    </div>
-  );
-};
-
-export default App;
+export default App

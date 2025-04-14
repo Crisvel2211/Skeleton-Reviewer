@@ -1,9 +1,11 @@
 import React from "react";
+import Header from "./Header";
 
 const RibcageViewer = () => {
   return (
+    <Header>
     <div
-      className="relative w-full h-[70vh] overflow-hidden flex items-center justify-center"
+      className="relative w-full h-screen overflow-hidden flex items-center justify-center"
       style={{
         cursor: "url('http://www.rw-designer.com/cursor-extern.php?id=38216'), auto",
         backgroundColor: "#0f2027", // Solid dark background (not gradient)
@@ -40,6 +42,7 @@ const RibcageViewer = () => {
         ></iframe>
       </div>
     </div>
+    </Header>
   );
 };
 

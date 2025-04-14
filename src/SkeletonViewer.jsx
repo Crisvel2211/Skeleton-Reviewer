@@ -1,39 +1,25 @@
-import React, { useEffect, useRef, useState } from "react";
-
+import React, { useRef } from "react";
+import Header from "./Header";
 const SkeletonViewer = () => {
   const containerRef = useRef(null);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    setTimeout(() => {
-      setLoading(false);
-    }, 2000);
-  }, []);
 
   return (
-    <div
-      className="relative w-full h-screen overflow-hidden flex items-center justify-center"
-      style={{
-        cursor: "url('http://www.rw-designer.com/cursor-extern.php?id=38216'), auto",
-        backgroundColor: "#0f2027", 
-      }}
-    >
+    <Header>
       <div
-        ref={containerRef}
-        className="relative flex items-center justify-center"
+        className="relative w-full h-screen overflow-hidden flex items-center justify-center"
         style={{
-          width: "80%",
-          height: "80%",
+          cursor: "url('http://www.rw-designer.com/cursor-extern.php?id=38216'), auto",
+          backgroundColor: "#0f2027",
         }}
       >
-        {loading ? (
-          <div className="absolute inset-0 flex flex-col items-center justify-center z-50 backdrop-blur-md bg-white/10 border border-white/20 rounded-lg shadow-lg">
-            <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-cyan-400 mb-4"></div>
-            <p className="text-lg text-cyan-200 font-semibold tracking-wider font-mono">
-              Loading Skeleton Model...
-            </p>
-          </div>
-        ) : (
+        <div
+          ref={containerRef}
+          className="relative flex items-center justify-center"
+          style={{
+            width: "80%",
+            height: "80%",
+          }}
+        >
           <div
             className="sketchfab-embed-wrapper w-full h-full animate-fade-in"
             style={{
@@ -63,24 +49,24 @@ const SkeletonViewer = () => {
               }}
             ></iframe>
           </div>
-        )}
-      </div>
+        </div>
 
-      {/* Tailwind fade-in animation */}
-      <style>
-        {`
-          .animate-fade-in {
-            animation: fadeIn 1s ease-in forwards;
-            opacity: 0;
-          }
-          @keyframes fadeIn {
-            to {
-              opacity: 1;
+        <style>
+          {`
+            .animate-fade-in {
+              animation: fadeIn 1s ease-in forwards;
+              opacity: 0;
             }
-          }
-        `}
-      </style>
-    </div>
+            @keyframes fadeIn {
+              to {
+                opacity: 1;
+              }
+            }
+          `}
+        </style>
+      </div>
+    </Header>
+    
   );
 };
 
