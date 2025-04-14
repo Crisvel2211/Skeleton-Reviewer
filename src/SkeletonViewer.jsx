@@ -15,7 +15,7 @@ const SkeletonViewer = () => {
       className="relative w-full h-screen overflow-hidden flex items-center justify-center"
       style={{
         cursor: "url('http://www.rw-designer.com/cursor-extern.php?id=38216'), auto",
-        background: "linear-gradient(135deg, #0f2027, #203a43, #2c5364)",
+        backgroundColor: "#0f2027", 
       }}
     >
       <div
